@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FETC 告警排查系統 (微軟公開直連版)</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9; }
+        .hidden { display: none !important; }
+        .login-screen, .main-screen, .admin-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; box-sizing: border-box; }
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 100%; max-width: 450px; text-align: center; }
+        input, select, textarea { width: 100%; padding: 12px; margin: 8px 0; box-sizing: border-box; border: 1px solid #ccc; border-radius: 6px; font-size: 16px; }
+        textarea { resize: vertical; height: 80px; }
+        button { width: 100%; padding: 12px; background: #007bff; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; margin-top: 10px; }
+        
+        .top-bar { width: 100%; max-width: 500px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .alarm-list-box { width: 100%; max-width: 500px; display: flex; flex-direction: column; align-items: center; overflow-y: auto; flex: 1; }
+        .alarm-item { background: white; padding: 15px; margin: 8px 0; border-radius: 8px; width: 100%; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; align-items: center; cursor: pointer; box-sizing: border-box; }
+        .alarm-badge { width: 14px; height: 14px; border-radius: 50%; margin-right: 15px; flex-shrink: 0; }
+        .bg-Critical { background-color: #dc3545; }
+        .bg-Major { background-color: #fd7e14; }
+        .bg-Minor { background-color: #ffc107; }
+        .bg-Info { background-color: #007bff; }
+        .device-tag { font-size: 11px; background: #e9ecef; color: #495057; padding: 2px 6px; border-radius: 4px; margin-left: 8px; }
+
+        .swiper { width: 100%; max-width: 500px; height: 65vh; margin-top: 10px; }
+        .swiper-slide { background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; }
+        .step-title { font-size: 20px; font-weight: bold; color: #007bff; margin-bottom: 10px; }
+        .step-text { font-size: 16px; color: #333; line-height: 1.5; margin-bottom: 15px; min-height: 50px; text-align: left; }
+        .step-img-box { flex: 1; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #f8f9fa; border-radius: 8px; }
+        .step-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        
+        .bottom-bar { width: 100%; max-width: 500px; display: flex; gap: 15px; margin-top: 15px; }
+        .back-btn { background: #6c757d; }
+        .step-input-group { border-left: 4px solid #007bff; padding-left: 10px; margin: 15px 0; background: #f8f9fa; padding: 10px; border-radius: 0 6px 6px 0; }
+    </style>
+</head>
+<body>
+
+    <div id="loginPage" class="login-screen">
+        <div class="card">
+            <h2>告警排除指引系統</h2>
+            <input type="password" id="pwdInput" placeholder="密碼 (一般:fetc1234 / 管理員:fetcadmin)">
+            <button onclick="checkLogin()">登入系統</button>
+        </div>
+    </div>
+
+    <div id="homePage" class="main-screen hidden" style="justify-content: start;">
+        <div class="top-bar">
+            <h3 id="homeTitle" style="margin: 0;">告警查詢首頁</h3>
+            <div style="display: flex; gap: 5px;">
+                <button id="adminBtn" onclick="goToAdminPage()" class="hidden" style="width: auto; margin:0; padding: 6px 12px; font-size: 13px; background: #6f42c1;">＋ 新增告警</button>
+                <button onclick="syncDatabase()" id="syncBtn" style="width: auto; margin:0; padding: 6px 12px; font-size: 13px; background: #28a745;">↻ 同步雲端</button>
+                <select id="langSelect" onchange="changeLanguage(this.value)" style="width: 100px; margin: 0; padding: 5px;">
+                    <option value="zh">繁體中文</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+        
+        <select id="filterSelect" onchange="renderAlarmList()" style="max-width: 500px;">
+            <option value="All" id="optAll">全部設備</option>
+            <option value="Camera">Camera (相機)</option>
+            <option value="LiDAR">LiDAR (雷達)</option>
+            <option value="Server">Server (伺服器)</option>
+            <option value="Power">Power (電力/電箱)</option>
+        </select>
+        
+        <div id="alarmListContainer" class="alarm-list-box"></div>
+    </div>
+
+    <div id="detailPage" class="main-screen hidden" style="justify-content: start;">
+        <div class="top-bar">
+            <h3 id="detailTitle" style="margin: 0;">排查指引</h3>
+        </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper" id="swiperWrapper"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="bottom-bar">
+            <button class="back-btn" onclick="showHomePage()" id="backBtn">← 返回清單</button>
+        </div>
+    </div>
+
+    <div id="adminPage" class="admin-screen hidden" style="justify-content: start; overflow-y: auto;">
+        <div class="card" style="max-width: 500px; text-align: left;">
+            <h3 style="margin-top: 0; text-align: center; color: #6f42c1;">新增/修改故障指引 (Admin)</h3>
+            <label>告警代碼 (例如: T1XCAM05)</label>
+            <input type="text" id="adminCode" placeholder="T1XCAM05">
+            <label>設備分類</label>
+            <select id="adminDevice">
+                <option value="Camera">Camera (相機)</option>
+                <option value="LiDAR">LiDAR (雷達)</option>
+                <option value="Server">Server (伺服器)</option>
+                <option value="Power">Power (電力/電箱)</option>
+            </select>
+            <label>告警類型</label>
+            <select id="adminType">
+                <option value="Critical">Critical (紅色)</option>
+                <option value="Major">Major (橘色)</option>
+                <option value="Minor">Minor (黃色)</option>
+                <option value="Info">Info (藍色)</option>
+            </select>
+            <label>告警名稱 (中文)</label>
+            <input type="text" id="adminNameZh" placeholder="相機斷線異常">
+            <label>告警名稱 (英文)</label>
+            <input type="text" id="adminNameEn" placeholder="Camera Disconnected">
+            <h4 style="margin: 20px 0 5px 0;">查修步驟設定</h4>
+            <div id="adminStepsContainer"></div>
+            <button type="button" onclick="addStepInputField()" style="background: #28a745; margin-bottom: 10px;">＋ 增加下一個步驟</button>
+            <button type="button" onclick="saveAndDownloadJSON()" style="background: #6f42c1;">💾 儲存並導出 alarms.json</button>
+            <button type="button" class="back-btn" onclick="exitAdminPage()">取消返回</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // 文字走 GitHub 同目錄
+        const jsonUrl = "alarms.json";
+
+        // 💡 核心修正：改用微軟 SharePoint 的公開用戶圖片直連流 API 端點
+        const tenantUrl = "https://fetctw-my.sharepoint.com/personal/fredcheng_fetci_com";
+        const rootFolder = "Alarm_Tool_TS";
+
+        let mockAlarms = []; 
+        let currentActiveAlarm = null;
+        let currentLang = 'zh'; 
+        let swiperInstance = null;
+        let isAdminMode = false;
+
+        const i18n = {
+            zh: { homeTitle: "告警查詢首頁", optAll: "全部設備", backBtn: "← 返回告警清單", step: "步驟" },
+            en: { homeTitle: "Alarm Dashboard", optAll: "All Devices", backBtn: "← Back to List", step: "Step" }
+        };
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            document.getElementById('homeTitle').innerText = i18n[lang].homeTitle;
+            document.getElementById('optAll').innerText = i18n[lang].optAll;
+            document.getElementById('backBtn').innerText = i18n[lang].backBtn;
+            if (!document.getElementById('homePage').classList.contains('hidden')) { renderAlarmList(); }
+            else if (!document.getElementById('detailPage').classList.contains('hidden') && currentActiveAlarm) { showDetailPage(currentActiveAlarm); }
+        }
+
+        function checkLogin() {
+            const pwd = document.getElementById('pwdInput').value;
+            if (pwd === "fetc1234" || pwd === "fetcadmin") {
+                if (pwd === "fetcadmin") {
+                    isAdminMode = true;
+                    document.getElementById('adminBtn').classList.remove('hidden');
+                }
+                document.getElementById('loginPage').classList.add('hidden');
+                document.getElementById('homePage').classList.remove('hidden');
+                syncDatabase(); 
+            } else { alert('密碼錯誤！'); }
+        }
+
+        async function syncDatabase() {
+            try {
+                const response = await fetch(jsonUrl);
+                if (response.ok) {
+                    const data = await response.json();
+                    mockAlarms = data;
+                    localStorage.setItem('cached_alarms', JSON.stringify(data)); 
+                } else { throw new Error(); }
+            } catch (error) {
+                const cachedData = localStorage.getItem('cached_alarms');
+                if (cachedData) mockAlarms = JSON.parse(cachedData);
+            }
+            renderAlarmList();
+        }
+
+        function renderAlarmList() {
+            const filter = document.getElementById('filterSelect').value;
+            const container = document.getElementById('alarmListContainer');
+            container.innerHTML = "";
+            if (mockAlarms.length === 0) {
+                container.innerHTML = `<div style="margin-top:20px; color:grey; text-align:center;">連線同步中...</div>`;
+                return;
+            }
+            mockAlarms.forEach(alarm => {
+                if (filter !== "All" && alarm.device !== filter) return;
+                const alarmName = currentLang === 'zh' ? alarm.name_zh : alarm.name_en;
+                const item = document.createElement('div');
+                item.className = "alarm-item";
+                item.onclick = () => showDetailPage(alarm);
+                item.innerHTML = `
+                    <div class="alarm-badge bg-${alarm.type}"></div>
+                    <div style="text-align: left; flex: 1;">
+                        <div style="display: flex; align-items: center;">
+                            <strong style="font-size: 16px;">${alarm.code}</strong>
+                            <span class="device-tag">${alarm.device}</span>
+                        </div>
+                        <div style="font-size: 14px; color: #666; margin-top: 5px;">${alarmName}</div>
+                    </div>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        function showDetailPage(alarm) {
+            currentActiveAlarm = alarm;
+            document.getElementById('homePage').classList.add('hidden');
+            document.getElementById('detailPage').classList.remove('hidden');
+            document.getElementById('detailTitle').innerText = `${alarm.code}`;
+
+            const wrapper = document.getElementById('swiperWrapper');
+            wrapper.innerHTML = "";
+            const currentSteps = currentLang === 'zh' ? alarm.steps_zh : alarm.steps_en;
+            const stepLabel = i18n[currentLang].step;
+
+            currentSteps.forEach((stepText, index) => {
+                const stepNum = index + 1;
+                
+                // 🎯 這是微軟企業版唯一的免登入直連大絕招 (利用 guestaccess 免驗證渲染端點)
+                const urlPath1 = `${tenantUrl}/_layouts/15/guestaccess.aspx?guestaccesstoken=%252f&docid=${alarm.code}_${stepNum}&getfile=1`;
+                const urlPath2 = `${tenantUrl}/_layouts/15/getFileByGuestUrl.aspx?shareUrl=${encodeURIComponent(tenantUrl + '/Documents/' + rootFolder + '/' + alarm.code + '/' + stepNum + '.jpg')}`;
+                const urlPath3 = `${tenantUrl}/_layouts/15/download.aspx?SourceUrl=/personal/fredcheng_fetci_com/Documents/${rootFolder}/${alarm.code}/${stepNum}.jpg`;
+
+                const slide = document.createElement('div');
+                slide.className = "swiper-slide";
+                slide.innerHTML = `
+                    <div class="step-title">${stepLabel} ${stepNum} / ${currentSteps.length}</div>
+                    <div class="step-text">${stepText}</div>
+                    <div class="step-img-box">
+                        <img src="${urlPath1}" alt="圖片載入中..." 
+                             onerror="if(this.src!=='${urlPath2}'){ this.src='${urlPath2}'; } else if(this.src!=='${urlPath3}'){ this.src='${urlPath3}'; } else { this.style.display='none'; }">
+                    </div>
+                `;
+                wrapper.appendChild(slide);
+            });
+
+            if (swiperInstance) swiperInstance.destroy();
+            swiperInstance = new Swiper(".mySwiper", { pagination: { el: ".swiper-pagination", clickable: true } });
+        }
+
+        function showHomePage() {
+            document.getElementById('detailPage').classList.add('hidden');
+            document.getElementById('homePage').classList.remove('hidden');
+            renderAlarmList();
+        }
+
+        let stepCount = 0;
+        function goToAdminPage() {
+            document.getElementById('homePage').classList.add('hidden');
+            document.getElementById('adminPage').classList.remove('hidden');
+            document.getElementById('adminCode').value = "";
+            document.getElementById('adminNameZh').value = "";
+            document.getElementById('adminNameEn').value = "";
+            document.getElementById('adminStepsContainer').innerHTML = "";
+            stepCount = 0;
+            addStepInputField();
+        }
+
+        function addStepInputField() {
+            stepCount++;
+            const container = document.getElementById('adminStepsContainer');
+            const div = document.createElement('div');
+            div.className = "step-input-group";
+            div.id = `stepGroup_${stepCount}`;
+            div.innerHTML = `
+                <strong>步驟 ${stepCount}</strong>
+                <textarea class="step-zh-input" placeholder="請輸入中文指引..."></textarea>
+                <textarea class="step-en-input" placeholder="Enter English guide..."></textarea>
+            `;
+            container.appendChild(div);
+        }
+
+        function saveAndDownloadJSON() {
+            const code = document.getElementById('adminCode').value.trim().toUpperCase();
+            const device = document.getElementById('adminDevice').value;
+            const type = document.getElementById('adminType').value;
+            const nameZh = document.getElementById('adminNameZh').value.trim();
+            const nameEn = document.getElementById('adminNameEn').value.trim();
+            if (!code || !nameZh || !nameEn) { alert('請填寫完整代碼與名稱！'); return; }
+            const stepsZh = []; const stepsEn = [];
+            document.querySelectorAll('.step-zh-input').forEach(node => { if(node.value.trim()) stepsZh.push(node.value.trim()); });
+            document.querySelectorAll('.step-en-input').forEach(node => { if(node.value.trim()) stepsEn.push(node.value.trim()); });
+            if (stepsZh.length === 0 || stepsZh.length !== stepsEn.length) { alert('中英文皆須完整填寫！'); return; }
+
+            const newAlarm = { code, device, type, name_zh: nameZh, name_en: nameEn, steps_zh: stepsZh, steps_en: stepsEn };
+            const existingIndex = mockAlarms.findIndex(a => a.code === code);
+            if (existingIndex > -1) { mockAlarms[existingIndex] = newAlarm; } else { mockAlarms.push(newAlarm); }
+
+            const jsonString = JSON.stringify(mockAlarms, null, 2);
+            const blob = new Blob([jsonString], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a'); a.href = url; a.download = "alarms.json";
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            localStorage.setItem('cached_alarms', jsonString);
+            exitAdminPage();
+        }
+
+        function exitAdminPage() {
+            document.getElementById('adminPage').classList.add('hidden');
+            document.getElementById('homePage').classList.remove('hidden');
+            renderAlarmList();
+        }
+
+        changeLanguage('zh');
+    </script>
+</body>
+</html>

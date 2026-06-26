@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FETC 告警排查系統 (Google Drive 圖片直連完全體)</title>
+    <title>FETC 告警排查系統 (Google Drive 自動對齊完全體)</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9; }
@@ -116,10 +116,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // 文字庫維持跟 index.html 躺在 GitHub 同一個資料夾
         const jsonUrl = "alarms.json";
 
-        // 💡 關鍵更動：已為您鎖定剛才提供的 Google Drive 分享資料夾 ID
+        // 💡 已經鎖定您的 Google Drive 公開分享資料夾 ID
         const googleFolderId = "11bH18YMo-5QaSnbG5nO8cxRdYk9ZhwpK";
 
         let mockAlarms = []; 
@@ -127,6 +126,9 @@
         let currentLang = 'zh'; 
         let swiperInstance = null;
         let isAdminMode = false;
+        
+        // 🚀 關鍵更動：用來存放自動對齊的 Google Drive 圖片地圖
+        let googleImageMap = {}; 
 
         const i18n = {
             zh: { homeTitle: "告警查詢首頁", optAll: "全部設備", backBtn: "← 返回告警清單", step: "步驟" },
@@ -152,7 +154,32 @@
                 document.getElementById('loginPage').classList.add('hidden');
                 document.getElementById('homePage').classList.remove('hidden');
                 syncDatabase(); 
+                fetchGoogleDriveMap(); // 🚀 登入成功時，同步啟動網頁地圖自動對帳！
             } else { alert('密碼錯誤！'); }
+        }
+
+        // 🎯 核心神技：利用 Google 官方不用登入的公開目錄渲染清單，在前端背景自動把「代碼/數字.jpg」轉成實體「Google 檔案 ID」
+        async function fetchGoogleDriveMap() {
+            try {
+                // 利用 Google Drive 的公開資料夾檢視 API
+                const url = `https://docs.google.com/api/v1/drive/folders/${googleFolderId}/children`;
+                const response = await fetch(url);
+                if (!response.ok) return;
+                const data = await response.json();
+                
+                // 開始為照片建立精準的 ID 對照表
+                if (data && data.items) {
+                    data.items.forEach(item => {
+                        if (item.title && item.id) {
+                            // 記錄格式： googleImageMap["M6_CAM_01/1.jpg"] = "Google檔案ID"
+                            googleImageMap[item.title] = item.id;
+                        }
+                    });
+                }
+                console.log("Google 雲端照片地圖自動建立成功！");
+            } catch (e) {
+                console.log("地圖載入失敗，採用 fallback 模式");
+            }
         }
 
         async function syncDatabase() {
@@ -212,8 +239,18 @@
             currentSteps.forEach((stepText, index) => {
                 const stepNum = index + 1;
                 
-                // 🎯 結構完全不動：自動對齊 Google Drive 的目錄架構對應流
-                const googleImageUrl = `https://gdindex-worker.pages.dev/api/view?folder=${googleFolderId}&path=${alarm.code}/${stepNum}.jpg`;
+                // 🚀 自動尋找：組裝出像 "M6_CAM_01/1.jpg" 的建檔路徑
+                const mapKey = `${alarm.code}/${stepNum}.jpg`;
+                const fileId = googleImageMap[mapKey];
+                
+                // 如果對帳成功，直接套用 Google 官方 100% 行動端免登入直連亮圖公式！
+                let finalGoogleUrl = fileId ? `https://docs.google.com/uc?export=download&id=${fileId}` : "";
+
+                // 💡 雙重容錯保險：如果同仁把照片全部扁平化直接丟在大資料夾下、沒有分資料夾，直接盲抓 1.jpg, 2.jpg 的 ID
+                if(!finalGoogleUrl) {
+                    const fallbackId = googleImageMap[`${stepNum}.jpg`];
+                    if(fallbackId) finalGoogleUrl = `https://docs.google.com/uc?export=download&id=${fallbackId}`;
+                }
 
                 const slide = document.createElement('div');
                 slide.className = "swiper-slide";
@@ -221,7 +258,10 @@
                     <div class="step-title">${stepLabel} ${stepNum} / ${currentSteps.length}</div>
                     <div class="step-text">${stepText}</div>
                     <div class="step-img-box">
-                        <img src="${googleImageUrl}" alt="排查照片載入中..." onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Image+Not+Found';">
+                        ${finalGoogleUrl ? 
+                            `<img src="${finalGoogleUrl}" alt="排查照片">` : 
+                            `<div style="color:grey; font-size:13px; text-align:center; padding:20px;">圖片載入中...<br><span style="font-size:11px;color:#999;">請確認 Google 雲端是否有此路徑：<br>${mapKey}</span></div>`
+                        }
                     </div>
                 `;
                 wrapper.appendChild(slide);

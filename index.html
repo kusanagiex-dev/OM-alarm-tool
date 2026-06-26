@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FETC 告警排查系統 (Google Drive + Admin 完全體)</title>
+    <title>FETC 告警排查系統 (GitHub 終極完全體)</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9; }
@@ -123,12 +123,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // =========================================================================
-        // 💡 修正關鍵：將你原本 test.html 裡的連結 ID 提取，改用 Google 官方直連純文字下載端點
-        // =========================================================================
+        // 💡 關鍵調整：直接抓取同目錄下的本地 alarms.json，全宇宙的手機瀏覽器都不會擋
         const jsonUrl = "alarms.json";
 
-        // 照片部分維持去抓取遠通微軟雲端空間的實體流
+        // 照片維持動態回連遠通微軟雲端空間實體流，外人絕對看不到圖
         const tenantUrl = "https://fetctw-my.sharepoint.com/personal/fredcheng_fetci_com";
         const rootFolder = "Alarm_Tool_TS";
 
@@ -136,7 +134,7 @@
         let currentActiveAlarm = null;
         let currentLang = 'zh'; 
         let swiperInstance = null;
-        let isAdminMode = false; // 💡 重新加入管理員狀態鎖
+        let isAdminMode = false;
 
         const i18n = {
             zh: { homeTitle: "告警查詢首頁", optAll: "全部設備", backBtn: "← 返回告警清單", step: "步驟" },
@@ -155,7 +153,6 @@
 
         function checkLogin() {
             const pwd = document.getElementById('pwdInput').value;
-            // 💡 修正權限判斷，輸入 fetcadmin 能開啟紫色後台按鈕
             if (pwd === "fetc1234" || pwd === "fetcadmin") {
                 if (pwd === "fetcadmin") {
                     isAdminMode = true;
@@ -169,16 +166,15 @@
 
         async function syncDatabase() {
             try {
-                console.log("正在直連 Google 雲端硬碟讀取最新 JSON 資料庫...");
                 const response = await fetch(jsonUrl);
                 if (response.ok) {
                     const data = await response.json();
                     mockAlarms = data;
                     localStorage.setItem('cached_alarms', JSON.stringify(data)); 
-                    console.log("Google 雲端同步成功！");
+                    console.log("資料庫同步成功！");
                 } else { throw new Error(); }
             } catch (error) {
-                console.log("讀取 Google 失敗或目前處於現場斷網狀態，改讀手機本機快取備份...");
+                console.log("改讀手機本地快取備份...");
                 const cachedData = localStorage.getItem('cached_alarms');
                 if (cachedData) mockAlarms = JSON.parse(cachedData);
             }
@@ -191,7 +187,7 @@
             container.innerHTML = "";
 
             if (mockAlarms.length === 0) {
-                container.innerHTML = `<div style="margin-top:20px; color:grey; text-align:center;">連線同步中...若持續此畫面請確認 Google 檔案共用權限已設定為「知道連結的任何人」。</div>`;
+                container.innerHTML = `<div style="margin-top:20px; color:grey; text-align:center;">連線同步中...請確認 alarms.json 已一同上傳至 GitHub 專案。</div>`;
                 return;
             }
 
@@ -258,7 +254,6 @@
             renderAlarmList();
         }
 
-        // 💡 重新加回：Admin 頁面切換控制模組
         let stepCount = 0;
         function goToAdminPage() {
             document.getElementById('homePage').classList.add('hidden');
@@ -320,7 +315,7 @@
             URL.revokeObjectURL(url);
 
             localStorage.setItem('cached_alarms', jsonString);
-            alert('匯出成功！請將生成的新 alarms.json 上傳覆蓋你的 Google 雲端硬碟檔案。');
+            alert('匯出成功！請將產出的 alarms.json 重新上傳到 GitHub 覆蓋舊檔即可。');
             exitAdminPage();
         }
 

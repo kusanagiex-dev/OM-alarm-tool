@@ -1,0 +1,19 @@
+[
+  {
+    "code": "T1XCAM05",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera 連線異常(Cannot connect)",
+    "name_en": "Camera (Cannot connect)",
+    "steps_zh": [
+      "打開En setup, 選擇故障相機, 確認Status",
+      "如有Bite出現, 請檢查Moxa G512的web page 確認Port的速率是否降為100Mb, 如是 請上SITE線路或檢查SPD",
+      "如果告警是持續的並且無法連入相機確認狀態  請更換相機"
+    ],
+    "steps_en": [
+      "Open En setup, choose alarm Camera, Check Status",
+      "If a \"Bite\" error occurs, please check the Moxa G512 web page to verify if the port speed has dropped to 100 Mbps; if so, please check the site line or the SPD.",
+      "If the alarm persists and you are unable to connect to the camera to verify its status, please replace the camera."
+    ]
+  }
+]

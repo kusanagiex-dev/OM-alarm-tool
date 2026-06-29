@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FETC 設備排查系統</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 20px; }
+        .hidden { display: none !important; }
+        .container { max-width: 500px; margin: auto; display: flex; flex-direction: column; align-items: center; }
+        .card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 100%; box-sizing: border-box; text-align: center; margin-bottom: 20px; }
+        input, textarea, select { width: 100%; padding: 10px; margin: 5px 0 15px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 14px; }
+        button { width: 100%; padding: 12px; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 10px; font-size: 15px; }
+        
+        .btn-ms { background: #0078d4; }
+        .btn-sys { background: #28a745; }
+        .btn-gray { background: #6c757d; }
+        .btn-outline { background: transparent; border: 1px solid #6c757d; color: #6c757d; padding: 6px 12px; font-size: 13px; width: auto; margin-top: 0; }
+        .btn-admin { background: #dc3545; padding: 6px 12px; font-size: 13px; width: auto; margin-top: 0; }
+        
+        .item { background: white; padding: 15px; margin: 8px 0; width: 100%; cursor: pointer; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); text-align: left; box-sizing: border-box; display: flex; align-items: center; }
+        .badge { padding: 3px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; color: white; margin-right: 10px; }
+        .badge-Major { background-color: #fd7e14; }
+        .badge-Critical { background-color: #dc3545; }
+        .badge-Minor { background-color: #ffc107; color: #333; }
+        
+        .swiper { width: 100%; max-width: 500px; height: 68vh; margin-top: 10px; }
+        .step-img { max-width: 100%; max-height: 350px; border-radius: 8px; margin-top: 10px; object-fit: contain; }
+        .step-text { font-weight: bold; color:#333; font-size: 15px; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+    <div id="loginContainer" class="container">
+        <div class="card" style="border-top: 4px solid #0078d4;">
+            <h3 style="margin-top: 0; color: #0078d4;">步驟 1：建立微軟雲端連線</h3>
+            <p style="font-size: 13px; color: #666; text-align: left;">讀取 OneDrive 圖片前，請先登入 O365。彈出視窗登入成功後即可關閉該視窗。</p>
+            <button class="btn-ms" onclick="window.open('https://fetctw-my.sharepoint.com/', '_blank', 'width=600,height=700')">登入 Office 365</button>
+        </div>
+        <div class="card" style="border-top: 4px solid #28a745;">
+            <h3 style="margin-top: 0; color: #28a745;">步驟 2：系統解鎖</h3>
+            <input type="text" id="userInput" placeholder="輸入帳號 (user/admin)">
+            <input type="password" id="pwdInput" placeholder="輸入系統密碼">
+            <button class="btn-sys" onclick="checkLogin()">進入排查系統</button>
+        </div>
+    </div>
+
+    <div id="listContainer" class="container hidden">
+        <div style="width: 100%; display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h3 style="margin: 0; color: #333;" id="titleList">設備告警清單</h3>
+            <div>
+                <button id="adminBtn" class="btn-admin hidden" onclick="showAdminPage()">+ 新增告警</button>
+                <button class="btn-outline" onclick="toggleLanguage()" id="btnLang">English</button>
+            </div>
+        </div>
+        <div id="list" style="width: 100%;"></div>
+    </div>
+
+    <div id="detailContainer" class="container hidden">
+        <div class="swiper mySwiper"><div class="swiper-wrapper" id="wrap"></div><div class="swiper-pagination"></div></div>
+        <button class="btn-gray" onclick="backToList()" style="max-width: 200px; margin-top: 15px;" id="btnBack">← 返回清單</button>
+    </div>
+
+    <div id="adminContainer" class="container hidden">
+        <div class="card" style="border-top: 4px solid #dc3545; text-align: left;">
+            <h3 style="margin-top: 0; color: #dc3545;">新增告警設定 (JSON 產生器)</h3>
+            <label>告警代碼 (Code)</label><input type="text" id="addCode" placeholder="例如: T1XCAM05">
+            <label>設備類型 (Device)</label><input type="text" id="addDevice" placeholder="例如: Camera">
+            <label>告警等級 (Type)</label>
+            <select id="addType">
+                <option value="Minor">Minor</option>
+                <option value="Major">Major</option>
+                <option value="Critical">Critical</option>
+            </select>
+            <label>中文名稱 (Name ZH)</label><input type="text" id="addNameZh">
+            <label>英文名稱 (Name EN)</label><input type="text" id="addNameEn">
+            <label>中文步驟 (多個步驟請用換行區隔)</label><textarea id="addStepsZh" rows="3"></textarea>
+            <label>英文步驟 (多個步驟請用換行區隔)</label><textarea id="addStepsEn" rows="3"></textarea>
+            
+            <button class="btn-sys" onclick="generateJson()">產生 JSON</button>
+            <textarea id="jsonOutput" rows="5" style="margin-top:10px; display:none;" readonly></textarea>
+            <button class="btn-gray" onclick="closeAdminPage()">取消 / 返回</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const tenantUrl = "https://fetctw-my.sharepoint.com/personal/fredcheng_fetci_com";
+        const rootFolder = "Alarm_Tool_TS";
+
+        let currentLang = 'zh'; // 預設中文
+        let isAdmin = false;
+        let globalData = []; // 存放 fetch 下來的 JSON 資料
+
+        async function checkLogin() {
+            const u = document.getElementById('userInput').value;
+            const p = document.getElementById('pwdInput').value;
+            
+            if ((u === 'user' && p === 'new@fetc88') || (u === 'admin' && p === 'admin')) {
+                isAdmin = (u === 'admin');
+                document.getElementById('loginContainer').classList.add('hidden');
+                document.getElementById('listContainer').classList.remove('hidden');
+                
+                if (isAdmin) document.getElementById('adminBtn').classList.remove('hidden');
+                
+                try {
+                    const response = await fetch("./alarms.json?t=" + Date.now());
+                    if (!response.ok) throw new Error("Network response was not ok");
+                    globalData = await response.json();
+                    renderList();
+                } catch (e) {
+                    alert("載入 alarms.json 失敗！");
+                }
+            } else {
+                alert("帳號或密碼錯誤");
+            }
+        }
+
+        // 切換語系邏輯
+        function toggleLanguage() {
+            currentLang = (currentLang === 'zh') ? 'en' : 'zh';
+            
+            // 更新按鈕與標題文字
+            document.getElementById('btnLang').innerText = currentLang === 'zh' ? 'English' : '中文';
+            document.getElementById('titleList').innerText = currentLang === 'zh' ? '設備告警清單' : 'Equipment Alarm List';
+            document.getElementById('btnBack').innerText = currentLang === 'zh' ? '← 返回清單' : '← Back to List';
+            
+            renderList(); // 重新渲染列表
+        }
+
+        function renderList() {
+            const list = document.getElementById('list');
+            list.innerHTML = "";
+            globalData.forEach(a => {
+                const div = document.createElement('div');
+                div.className = "item";
+                
+                let badgeClass = "badge-Minor";
+                if(a.type === "Major") badgeClass = "badge-Major";
+                if(a.type === "Critical") badgeClass = "badge-Critical";
+
+                // 根據語系決定顯示名稱
+                const displayName = currentLang === 'zh' ? a.name_zh : (a.name_en || a.name_zh);
+
+                div.innerHTML = `
+                    <span class="badge ${badgeClass}">${a.type || 'Minor'}</span>
+                    <strong style="color:#0078d4;">${a.code}</strong> 
+                    <span style="margin-left:8px; color:#333;">${displayName}</span>
+                `;
+                div.onclick = () => showDetail(a);
+                list.appendChild(div);
+            });
+        }
+
+        function showDetail(a) {
+            document.getElementById('listContainer').classList.add('hidden');
+            document.getElementById('detailContainer').classList.remove('hidden');
+            const wrap = document.getElementById('wrap');
+            wrap.innerHTML = "";
+            
+            // 決定要抓取哪一組步驟
+            const steps = currentLang === 'zh' ? a.steps_zh : (a.steps_en || a.steps_zh);
+            const stepPrefix = currentLang === 'zh' ? '步驟' : 'Step';
+            
+            steps.forEach((s, i) => {
+                const imgPath = `${tenantUrl}/_layouts/15/download.aspx?SourceUrl=/personal/fredcheng_fetci_com/Documents/${rootFolder}/${a.code}/${i+1}.jpg`;
+                
+                wrap.innerHTML += `<div class="swiper-slide" style="display:flex; flex-direction:column; align-items:center;">
+                    <div style="width:100%; text-align:left; padding: 0 15px;">
+                        <p class="step-text">${stepPrefix} ${i+1}: ${s}</p>
+                    </div>
+                    <div style="flex:1; display:flex; align-items:center; justify-content:center; width:100%; background:#eaeaea; border-radius:8px; overflow:hidden;">
+                        <img src="${imgPath}" class="step-img" onerror="this.src='https://placehold.co/400x300?text=圖片載入失敗 / 未登入O365'">
+                    </div>
+                </div>`;
+            });
+            
+            new Swiper(".mySwiper", { pagination: { el: ".swiper-pagination" } });
+        }
+
+        function backToList() {
+            document.getElementById('detailContainer').classList.add('hidden');
+            document.getElementById('listContainer').classList.remove('hidden');
+        }
+
+        // Admin 新增頁面控制
+        function showAdminPage() {
+            document.getElementById('listContainer').classList.add('hidden');
+            document.getElementById('adminContainer').classList.remove('hidden');
+        }
+
+        function closeAdminPage() {
+            document.getElementById('adminContainer').classList.add('hidden');
+            document.getElementById('listContainer').classList.remove('hidden');
+            document.getElementById('jsonOutput').style.display = 'none';
+        }
+
+        // 產生 JSON 邏輯
+        function generateJson() {
+            const stepsZhArray = document.getElementById('addStepsZh').value.split('\n').filter(s => s.trim() !== '');
+            const stepsEnArray = document.getElementById('addStepsEn').value.split('\n').filter(s => s.trim() !== '');
+            
+            const newObj = {
+                code: document.getElementById('addCode').value.trim(),
+                device: document.getElementById('addDevice').value.trim(),
+                type: document.getElementById('addType').value,
+                name_zh: document.getElementById('addNameZh').value.trim(),
+                name_en: document.getElementById('addNameEn').value.trim(),
+                steps_zh: stepsZhArray,
+                steps_en: stepsEnArray
+            };
+
+            const outputBox = document.getElementById('jsonOutput');
+            outputBox.style.display = 'block';
+            outputBox.value = "請將以下代碼複製並貼上到 alarms.json 中：\n\n" + JSON.stringify(newObj, null, 2) + ",";
+            outputBox.select();
+        }
+    </script>
+</body>
+</html>

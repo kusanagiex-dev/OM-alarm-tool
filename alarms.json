@@ -1,0 +1,2865 @@
+[
+  {
+    "code": "T1DB01",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "DB 狀態為不活動的",
+    "name_en": "DB status is inactive",
+    "steps_zh": [
+      "請連線至adminweb, 檢查服務狀態\n如DB服務指示燈為紅色, 請聯絡後端工程師"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1DB02",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "DB 狀態為異常的",
+    "name_en": "DB status is abnormal",
+    "steps_zh": [
+      "請連線至adminweb, 檢查服務狀態\n如DB服務指示燈為紅色, 請聯絡後端工程師\n如DB服務指示燈為綠色但告警仍然持續, 請聯絡後端工程師"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1FTP01",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "FTP 狀態為不活動的",
+    "name_en": "FTP status is inactive",
+    "steps_zh": [
+      "請連線至adminweb, 檢查服務狀態\n如FTP服務指示燈為紅色, 請聯絡後端工程師"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1FTP02",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "FTP 狀態為異常的",
+    "name_en": "FTP status is abnormal",
+    "steps_zh": [
+      "請連線至adminweb, 檢查服務狀態\n如FTP服務指示燈為紅色, 請聯絡後端工程師\n如FTP服務指示燈為綠色但告警仍然持續, 請聯絡後端工程師"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SNMP01",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "SNMPD 狀態為不活動的",
+    "name_en": "SNMPD status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SNMP02",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "SNMPD 狀態為異常的",
+    "name_en": "SNMPD status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV01",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "image_count_checker 狀態為異常",
+    "name_en": "image_count_checker status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV02",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "image_count_checker 狀態為活動的",
+    "name_en": "image_count_checker active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV03",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "image_count_checker 狀態為不活動的",
+    "name_en": "image_count_checker status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV04",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "image_queue_server 狀態為異常",
+    "name_en": "image_queue_server status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV05",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "image_queue_server 狀態為活動的",
+    "name_en": "image_queue_server status is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV06",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "image_queue_server 狀態為不活動的",
+    "name_en": "image_queue_server status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV07",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "lpr1_processor 狀態為異常",
+    "name_en": "lpr1_processor status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV08",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "lpr1_processor 狀態為活動的",
+    "name_en": "lpr1_processor status is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV09",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "lpr1_processor 狀態為不活動的",
+    "name_en": "lpr1_processor status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV10",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "lpr2_processor 狀態為異常",
+    "name_en": "lpr2_processor status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV11",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "lpr2_processor 狀態為活動的",
+    "name_en": "lpr2_processor status is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV12",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "lpr2_processor 狀態為不活動的",
+    "name_en": "lpr2_processor status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV13",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "traffic_data_provider 狀態為異常",
+    "name_en": "traffic_data_provider status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV14",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "traffic_data_provider 狀態為活動的",
+    "name_en": "traffic_data_provider status is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV15",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "traffic_data_provider 狀態為不活動的",
+    "name_en": "traffic_data_provider status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV16",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "T1XH_3_POINT_3_VOLT電壓正常",
+    "name_en": "T1XH_3_POINT_3_VOLT is normal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV17",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "T1XH_3_POINT_3_VOLT電壓異常",
+    "name_en": "T1XH_3_POINT_3_VOLT is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV18",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "T1XH_12_VOLT電壓正常",
+    "name_en": "T1XH_12_VOLT is normal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV19",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "T1XH_12_VOLT電壓異常",
+    "name_en": "T1XH_12_VOLT is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV20",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "T1XH_5_VOLT電壓正常",
+    "name_en": "T1XH_5_VOLT is normal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV21",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "T1XH_5_VOLT電壓異常",
+    "name_en": "T1XH_5_VOLT is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV22",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "T1XH_CPU0Temperature溫度正常",
+    "name_en": "T1XH_CPU0Temperature is normal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV23",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "T1XH_CPU0Temperature溫度異常",
+    "name_en": "T1XH_CPU0Temperature is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV24",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "T1XH_OutletTemperature溫度正常",
+    "name_en": "T1XH_OutletTemperature is normal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV25",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "T1XH_OutletTemperature溫度異常",
+    "name_en": "T1XH_OutletTemperature is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV26",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "T1XH_InletTemperature溫度正常",
+    "name_en": "T1XH_InletTemperature is normal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV27",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "T1XH_InletTemperature溫度異常",
+    "name_en": "T1XH_InletTemperature is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV28",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "Memory使用率正常",
+    "name_en": "Memory usage is normal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV29",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "Disk使用率正常",
+    "name_en": "Disk usage is normal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV30",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "CPU使用率正常",
+    "name_en": "CPU usage is normal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV31",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "lpr_processor 處理異常(lprDiffCount)",
+    "name_en": "lpr_processor is abnormal(lprDiffCount)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV32",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "traffic_data_sender 狀態為異常",
+    "name_en": "traffic_data_sender status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV33",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "traffic_data_sender 狀態為不活動的",
+    "name_en": "traffic_data_sender status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV34",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "CCTV 狀態為異常",
+    "name_en": "IVVC status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV35",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "CCTV 狀態為不活動的",
+    "name_en": "IVVC status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV36",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "AVC 狀態為異常",
+    "name_en": "AVC status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1SSV37",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "AVC 狀態為不活動的",
+    "name_en": "AVC status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV00",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "T1X 伺服器狀態未更新",
+    "name_en": "T1X server status is not updated",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV01",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "機箱溫度異常",
+    "name_en": "Chassis temperature is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV02",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Web Module 狀態為不活動的",
+    "name_en": "Web Module status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV03",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "Web Module 狀態為活動的",
+    "name_en": "Web Module status is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV04",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Web Module  狀態為異常的",
+    "name_en": "Web Module status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV05",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Tag Manager 狀態為異常",
+    "name_en": "Tag Manager status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV06",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "Tag Manager 狀態為活動的",
+    "name_en": "Tag Manager status is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV07",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Tag Manager 狀態為不活動的",
+    "name_en": "Tag Manager status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV08",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "T1X LaneServer 發生 failover",
+    "name_en": "T1X LaneServer failover",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV09",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "System Monitor狀態為異常",
+    "name_en": "System Monitor status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV10",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "System Monitor狀態為活動",
+    "name_en": "System Monitor status is normal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV11",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "System Monitor狀態為不活動",
+    "name_en": "System Monitor status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV12",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "NTPD 狀態為不活動的",
+    "name_en": "NTPD status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV13",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "NTPD 狀態為異常的",
+    "name_en": "NTPD status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV14",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Memory使用率異常",
+    "name_en": "Memory usage is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV15",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "LPR Server 狀態為活動的",
+    "name_en": "LPR Server status is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV16",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "LPR Server  狀態為異常",
+    "name_en": "LPR Server status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV17",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "LPR Server  狀態為不活動的",
+    "name_en": "LPR Server status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV18",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "Image Server 狀態為活動的",
+    "name_en": "Image Server status is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV19",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Image Server  狀態為異常",
+    "name_en": "Image Server status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV20",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Image Server  狀態為不活動的",
+    "name_en": "Image Server status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV21",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "heartbeat狀態為活動的",
+    "name_en": "heartbeat status is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV22",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "heartbeat狀態為不活動的",
+    "name_en": "heartbeat status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV23",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "eth3狀態為不活動的",
+    "name_en": "eth3 status is inactive",
+    "steps_zh": [
+      "請至SERVER ROOM 檢找該Lan cable的線路狀況\n使用儀器檢測, 如線路無法測通或搖晃接頭有斷線情形,請更換線路\n如更換線路仍無法排除, 請聯繫後端工程師確認網卡狀態"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV24",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "eth2狀態為不活動的",
+    "name_en": "eth2 status is inactive",
+    "steps_zh": [
+      "請至SERVER ROOM 檢找該Lan cable的線路狀況\n使用儀器檢測, 如線路無法測通或搖晃接頭有斷線情形,請更換線路\n如更換線路仍無法排除, 請聯繫後端工程師確認網卡狀態"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV25",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "eth1狀態為不活動的",
+    "name_en": "eth1 status is inactive",
+    "steps_zh": [
+      "請至SERVER ROOM 檢找該Lan cable的線路狀況\n使用儀器檢測, 如線路無法測通或搖晃接頭有斷線情形,請更換線路\n如更換線路仍無法排除, 請聯繫後端工程師確認網卡狀態"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV26",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "eth0(外網)狀態為不活動的",
+    "name_en": "eth0(Extranet) status is inactive",
+    "steps_zh": [
+      "請至SERVER ROOM 檢找該Lan cable的線路狀況\n使用儀器檢測, 如線路無法測通或搖晃接頭有斷線情形,請更換線路\n如更換線路仍無法排除, 請聯繫後端工程師確認網卡狀態"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV27",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Dongle 狀態為異常(bad Huffman code)",
+    "name_en": "Dongle status is abnormal(bad Huffman code)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV28",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Disk使用率異常",
+    "name_en": "Disk usage is abnormal",
+    "steps_zh": [
+      "磁碟空間使用  請連繫後端工程師"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV29",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Detection Module 狀態為異常",
+    "name_en": "Detection Module status is abnormal",
+    "steps_zh": [
+      "檢查Server的Detection Module服務在adminweb是否為綠燈並嘗試重啟服務, 如重啟後狀態為改善請連繫後端工程師"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV30",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "Detection Module 狀態為活動的",
+    "name_en": "Detection Module status is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV31",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Detection Module 狀態為不活動的",
+    "name_en": "Detection Module status is inactive",
+    "steps_zh": [
+      "檢查Server的Detection Module服務在adminweb是否為綠燈並嘗試重啟服務, 如重啟後狀態為改善請連繫後端工程師"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV32",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Data Provider 狀態為異常",
+    "name_en": "Data Provider status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV33",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "Data Provider 狀態為活動的",
+    "name_en": "Data Provider status is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV34",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Data Provider 狀態為不活動的",
+    "name_en": "Data Provider status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV35",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "CPU使用率異常",
+    "name_en": "CPU usage is abnormal",
+    "steps_zh": [
+      "連線進LCS並使用TOP -C指令看cpu使用狀態, 將畫面截圖並聯繫後端工程師"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV36",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "CPU 溫度異常",
+    "name_en": "CPU temperature is abnormal",
+    "steps_zh": [
+      "確認告警是否持續, 如是請更換主機, 如不是請聯繫後端工程師分析原因"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV37",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Core Matching System 狀態為異常",
+    "name_en": "CCTV is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV38",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "Core Matching System 狀態為活動的",
+    "name_en": "CCTV is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV39",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Core Matching System 狀態為不活動的",
+    "name_en": "CCTV is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV40",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "CPU風扇轉速異常",
+    "name_en": "CPU fan speed is abnormal",
+    "steps_zh": [
+      "請到現場確認SERVER風扇狀態, 如轉速過慢需要排程更換主機"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV41",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "Primary Server Cluster IP狀態為活動的",
+    "name_en": "Primary Server Cluster IP status is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV42",
+    "device": "SVR",
+    "type": "ERROR",
+    "name_zh": "Primary Server Cluster IP狀態為不活動的",
+    "name_en": "Primary Server Cluster IP status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV43",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Primary & Backup Server Cluster IP 狀態皆為不活動的",
+    "name_en": "Primary & Backup Server Cluster IP status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV44",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "LPR Server  狀態為異常(Queue Over 600)",
+    "name_en": "LPR Server status is abnormal(Queue Over 600)",
+    "steps_zh": [
+      "檢查Server的LPR服務在adminweb是否為綠燈並嘗試重啟服務, 如重啟後狀態為改善請連繫後端工程師"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV45",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Data Provider 狀態為異常(bad_certificate)",
+    "name_en": "Data Provider status is abnormal(bad_certificate)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV46",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "前端車道系統 VT1 數量過多(vt1Ratio)",
+    "name_en": "Front-end lane system VT1 exceed limit (vt1Ratio)",
+    "steps_zh": [
+      "VT1 = 無RFID Tag資料, 請確認有無Reader併發的設備告警, 如有請進場檢修Reader, 如無請持續觀察"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV47",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "前端車道系統 VT2 數量過多(vt2Ratio)",
+    "name_en": "Front-end lane system VT2 exceed limit (vt2Ratio)",
+    "steps_zh": [
+      "VT2 = 無車型資料, 請確認交易資料是否為僅有RFID資料, 無照片, 如是則為同一輛車攜帶大量RFID Tag\n請調閱CCTV確認當下是否為塞車情形, 塞車同樣會導致VT2的產生"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV48",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "前端車道系統缺影像數量過多(noImageRatio)",
+    "name_en": "Front-end lane system image missing exceed limit (noImageRatio)",
+    "steps_zh": [
+      "代表VD有偵測但沒有照片被綁定成一筆交易資料\n請確認Server的Enforcement資料夾裡面有照片, 如有, 請用ITS Tool確認相機的NTP狀態. 時間相差太多請重啟相機重新較時\n確認FTP的Log, 確認相機從門架上傳下來LCS的時間沒有超過3秒.\n如Enforcement資料夾無當下照片, 請直接更換相機\n如伴隨相機告警, 請攜帶備品直接上Site檢查相機狀態"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV49",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "前端車道系統車牌辨識失敗率過多(lprRatio)",
+    "name_en": "Front-end lane system LPR failure rate exceed limit (lprRatio)",
+    "steps_zh": [
+      "請檢查照片的成像狀態, 有可能是暴雨、髒污、起霧, 請至site上擦拭鏡頭\n檢查Server的LPR服務是否正常運作並連繫後端工程師"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV50",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "LPR Server  狀態為異常(enQueue Over 800)",
+    "name_en": "LPR Server status is abnormal(enQueue Over 800)",
+    "steps_zh": [
+      "檢查Server的LPR服務在adminweb是否為綠燈並嘗試重啟服務, 如重啟後狀態為改善請連繫後端工程師"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV51",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "LPR Server  狀態為異常(deQueue Over 800)",
+    "name_en": "LPR Server status is abnormal(deQueue Over 800)",
+    "steps_zh": [
+      "檢查Server的LPR服務在adminweb是否為綠燈並嘗試重啟服務, 如重啟後狀態為改善請連繫後端工程師"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV52",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Dongle 狀態為異常(Corrupt JPEG data)",
+    "name_en": "Dongle status is abnormal(Corrupt JPEG data)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV53",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Dongle 狀態為異常(Hardware key lock error)",
+    "name_en": "Dongle status is abnormal(Hardware key lock error)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV54",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Dongle 狀態為異常",
+    "name_en": "Dongle status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV55",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "前端車道系統車偵異常數量過多(noDetectionTimeEndRatio)",
+    "name_en": "Front-end lane system no detection end time exceed limit (noDetectionTimeEndRatio)",
+    "steps_zh": [
+      "檢查交易資料是否有多數交易只有detection END time但沒有照片或者RFID資料, 並檢查CCTV確認門架Trigger線上有沒有雜物.\n如無上述狀況, 請上site清潔VD偵測器"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV56",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "LPR Server  狀態為不活動的 (image receive delay)",
+    "name_en": "LPR Server status is inactive (image receive delay)",
+    "steps_zh": [
+      "檢查Server的LPR服務在adminweb是否為綠燈並嘗試重啟服務, 如重啟後狀態為改善請連繫後端工程師"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV57",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "Core Matching System 狀態為異常(Matching delay happened)",
+    "name_en": "Core Matching System status is abnormal(Matching delay happened)",
+    "steps_zh": [
+      "這個告警是指在把所有車道資料合併成交易資料的時候出現問題, 請聯繫後端工程師"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV58",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "前端車道系統車偵異常數量過多(AbnormalClassificationRatio)",
+    "name_en": "Front-end lane system abnormal detection exceed limit (AbnormalClassificationRatio)",
+    "steps_zh": [
+      "檢查交易資料是否有多數交易只有detection time但沒有照片或者RFID資料, 並檢查CCTV確認門架Trigger線上有沒有雜物.\n如無上述狀況, 請上site清潔VD偵測器"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV59",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "前端車道系統影像檔案異常(image file is abnormal)",
+    "name_en": "Front-end lane system abnormal image file (image file is abnormal)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV60",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "前端車道系統影像時間異常(image file time is abnormal)",
+    "name_en": "Front-end lane system abnormal image capture time (image file time is abnormal)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV61",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "前端車道系統影像時間異常(tag raw_arrive_time is abnormal)",
+    "name_en": "Front-end lane system abnormal tag raw arrive time (tag raw_arrive_time is abnormal)",
+    "steps_zh": [
+      "此告警為RFID Tag偵測時間異常, 請確認Reader的NTP狀態"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV62",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "前端車道系統硬碟可使用空間不足(partition usage)",
+    "name_en": "Front-end lane system insufficient storage ( partition usage)",
+    "steps_zh": [
+      "磁碟空間不足  請連繫後端工程師"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV70",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "image_data_sender 狀態為異常",
+    "name_en": "image_data_sender status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV71",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "image_data_sender 狀態為活動的",
+    "name_en": "image_data_sender status is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV72",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "image_data_sender 狀態為不活動的",
+    "name_en": "image_data_sender status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV73",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "image_count_server 狀態為異常",
+    "name_en": "image_count_server status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV74",
+    "device": "SVR",
+    "type": "INFO",
+    "name_zh": "image_count_server 狀態為活動的",
+    "name_en": "image_count_server status is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV75",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "image_count_server 狀態為不活動的",
+    "name_en": "image_count_server status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV80",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "cluster_monitor 狀態為異常",
+    "name_en": "cluster_monitor status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV81",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "cluster_monitor 狀態為不活動的",
+    "name_en": "cluster_monitor status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 SVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV90",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "ntp_monitor 狀態為異常",
+    "name_en": "ntp_monitor status is abnormal",
+    "steps_zh": [
+      "檢查Server的ntp服務在adminweb是否為綠燈並嘗試重啟服務, 如重啟後狀態為改善請連繫後端工程師"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV91",
+    "device": "SVR",
+    "type": "Major",
+    "name_zh": "ntp_monitor 狀態為不活動的",
+    "name_en": "ntp_monitor status is inactive",
+    "steps_zh": [
+      "檢查Server的ntp服務在adminweb是否為綠燈並嘗試重啟服務, 如重啟後狀態為改善請連繫後端工程師"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty SVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV92",
+    "device": "CCTVSVR",
+    "type": "Major",
+    "name_zh": "cctv_server 狀態為異常",
+    "name_en": "cctv_server status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 CCTVSVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty CCTVSVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV93",
+    "device": "CCTVSVR",
+    "type": "Major",
+    "name_zh": "cctv_server 狀態為不活動的",
+    "name_en": "cctv_server status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 CCTVSVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty CCTVSVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV94",
+    "device": "NVRSVR",
+    "type": "Major",
+    "name_zh": "nvr_server 狀態為異常",
+    "name_en": "nvr_server status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 NVRSVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty NVRSVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSV95",
+    "device": "NVRSVR",
+    "type": "Major",
+    "name_zh": "nvr_server 狀態為不活動的",
+    "name_en": "nvr_server status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 NVRSVR 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty NVRSVR device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM01",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera狀態為不活動的",
+    "name_en": "Camera status is inactive",
+    "steps_zh": [
+      "請確認相機狀態, 如無法連線, 請攜帶備品上SITE檢修\n確認STP燈號及輸入/出電壓, 如燈號或輸入/出電壓異常請更換STP\n確認SPD <->Moxa Lan短跳線是否為Link up \nBy pass SPD <->Moxa Lan短跳線直連相機, 如可連線 請更換Lan Cable\n如By Pass無法連線, 請更換相機"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM02",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera 狀態異常",
+    "name_en": "Camera status is abnormal",
+    "steps_zh": [
+      "請確認相機狀態, 如無法連線, 請攜帶備品上SITE檢修\n確認STP燈號及輸入/出電壓, 如燈號或輸入/出電壓異常請更換STP\n確認SPD <->Moxa Lan短跳線是否為Link up \nBy pass SPD <->Moxa Lan短跳線直連相機, 如可連線 請更換Lan Cable\n如By Pass無法連線, 請更換相機"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM03",
+    "device": "Camera",
+    "type": "INFO",
+    "name_zh": "Camera 狀態為活動的",
+    "name_en": "Camera status is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Camera 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM04",
+    "device": "Camera",
+    "type": "INFO",
+    "name_zh": "Camera NTP 狀態異常(ntp time offset 0 is impossible)",
+    "name_en": "Camera NTP status is abnormal(ntp time offset 0 is impossible)",
+    "steps_zh": [
+      "意即相機與LCS的時間差為0, 請使用ITS Tool 確認NTP設定欄位"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM05",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera 連線異常(Cannot connect)",
+    "name_en": "Camera connection is abnormal(Cannot connect)",
+    "steps_zh": [
+      "請確認相機狀態, 如無法連線, 請攜帶備品上SITE檢修\n確認STP燈號及輸入/出電壓, 如燈號或輸入/出電壓異常請更換STP\n確認SPD <->Moxa Lan短跳線是否為Link up \nBy pass SPD <->Moxa Lan短跳線直連相機, 如可連線 請更換Lan Cable\n如By Pass無法連線, 請更換相機"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM06",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera 連線異常(Connection refused)",
+    "name_en": "Camera connection is abnormal(Connection refused)",
+    "steps_zh": [
+      "請確認相機狀態, 如無法連線, 請攜帶備品上SITE檢修\n確認STP燈號及輸入/出電壓, 如燈號或輸入/出電壓異常請更換STP\n確認SPD <->Moxa Lan短跳線是否為Link up \nBy pass SPD <->Moxa Lan短跳線直連相機, 如可連線 請更換Lan Cable\n如By Pass無法連線, 請更換相機"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM07",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera 連線異常(Connection reset)",
+    "name_en": "Camera connection is abnormal(Connection reset)",
+    "steps_zh": [
+      "請使用ITS Tool 確認ERROR Status, 如為Bite表示Lan cable傳輸速率為100mb, 正常為1G\n使用moxa web page確認Log看有無Port的狀態由1G ->100MB\n更換SPD <->Moxa Lan短跳線"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM08",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera 連線異常(No route to host)",
+    "name_en": "Camera connection is abnormal(No route to host)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Camera 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM09",
+    "device": "Camera",
+    "type": "INFO",
+    "name_zh": "Camera NTP 狀態異常(Cannot retrieve ntp info from camera)",
+    "name_en": "Camera NTP status is abnormal(Cannot retrieve ntp info from camera)",
+    "steps_zh": [
+      "請確認相機狀態, 如無法連線, 請攜帶備品上SITE檢修\n確認STP燈號及輸入/出電壓, 如燈號或輸入/出電壓異常請更換STP\n確認SPD <->Moxa Lan短跳線是否為Link up \nBy pass SPD <->Moxa Lan短跳線直連相機, 如可連線 請更換Lan Cable\n如By Pass無法連線, 請更換相機"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM10",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera 連線異常(IO board Serial Communication Error)",
+    "name_en": "Camera connection is abnormal(IO board Serial Communication Error)",
+    "steps_zh": [
+      "I/O Board故障, 如Log detail為RS232異常則無須理會\n如為其他異常訊息請更換I/O Board"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM11",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera 狀態異常(False Trigger)",
+    "name_en": "Camera status is abnormal(False Trigger)",
+    "steps_zh": [
+      "False Trigger 為STP觸發訊號電壓過低(<3.15V)或者I/O Board異常\n請優先考慮更換STP(故障率最高)\n請將STP上的Trigger output線路移除, 並檢查有無氧化現象, 如有請重新壓接O型端子"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM12",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera 狀態異常(IO Input Changed)",
+    "name_en": "Camera status is abnormal(IO Input Changed)",
+    "steps_zh": [
+      "I/O Board故障, 如Log detail為RS232異常則無須理會\n如為其他異常訊息請更換I/O Board"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM13",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera 狀態異常(Module is not responding)",
+    "name_en": "Camera status is abnormal(Module is not responding)",
+    "steps_zh": [
+      "請嘗試電源重起相機  重啟後告警仍持續, 請更換相機"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM14",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera 狀態異常(Data was lost)",
+    "name_en": "Camera status is abnormal(Data was lost)",
+    "steps_zh": [
+      "資料有遺失的可能, 請更換相機"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM15",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera FTP 狀態異常(FTP Fail)",
+    "name_en": "Camera FTP status is abnormal(FTP Fail)",
+    "steps_zh": [
+      "使用ITS TOOL 檢查FTP的設定是否有異常, 如異常請調整設定.\n如果設定無異常請嘗試遠端重啟相機, 重啟後無改善請更換相機"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM16",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera FTP 狀態異常(FTP Destination Down)",
+    "name_en": "Camera FTP status is abnormal(FTP Destination Down)",
+    "steps_zh": [
+      "指相機無法將照片送至LCS, 請檢查相機連線狀態"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM17",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera NTP 狀態異常(NTP server down)",
+    "name_en": "Camera NTP status is abnormal(NTP server down)",
+    "steps_zh": [
+      "使用ITS TOOL 檢查NTP的設定是否有異常, 如異常請調整設定.\n如果設定無異常可嘗試遠端重啟相機"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM18",
+    "device": "Camera",
+    "type": "INFO",
+    "name_zh": "Camera FTP 狀態異常(FTP Fail Recovered)",
+    "name_en": "Camera FTP status is abnormal(FTP Fail Recovered)",
+    "steps_zh": [
+      "指相機FTP服務無法啟動 請嘗試遠端重啟相機, 重啟後無改善請更換相機"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM19",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera 狀態異常(Light Alarm)",
+    "name_en": "Camera status is abnormal(Light Alarm)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Camera 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM20",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera 狀態異常(image receive delay)",
+    "name_en": "Camera status is abnormal(image receive delay)",
+    "steps_zh": [
+      "指相機傳輸照片至LCS的速度太慢, 請檢查相機網路線連線速率是否為100MB, 如是請檢修Lan Cable\n如速率正常為1G, 請檢查Fiber連線狀態, 可能為Fiber品質不佳"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM21",
+    "device": "Camera",
+    "type": "INFO",
+    "name_zh": "Camera NTP 狀態異常(ntptrace output is empty)",
+    "name_en": "Camera NTP status is abnormal(ntptrace output is empty)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Camera 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM22",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera 狀態異常(Light Sensor 2 Communication Error)",
+    "name_en": "Camera status is abnormal(Light Sensor 2 Communication Error)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Camera 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM23",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera 狀態異常(JPEG failed)",
+    "name_en": "Camera status is abnormal(JPEG failed)",
+    "steps_zh": [
+      "指相機產生了不完整的圖片, 請檢查交易資料是否有照片成像異常, 如有請更換相機"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM24",
+    "device": "Camera",
+    "type": "Major",
+    "name_zh": "Camera 狀態異常(Light Sensor 1 Communication Error)",
+    "name_en": "Camera status is abnormal(Light Sensor 1 Communication Error)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Camera 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Camera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM25",
+    "device": "RCamera",
+    "type": "Major",
+    "name_zh": "後照Camera 後照連線異常(ping fail)",
+    "name_en": "RCamera connection is abnormal(ping fail)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 RCamera 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty RCamera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM26",
+    "device": "RCamera",
+    "type": "Major",
+    "name_zh": "後照Camera 後照狀態異常(NO PICTURE)",
+    "name_en": "RCamera status is abnormal(NO PICTURE)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 RCamera 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty RCamera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM27",
+    "device": "RCamera",
+    "type": "Major",
+    "name_zh": "後照Camera 後照狀態異常(error:)",
+    "name_en": "RCamera status is abnormal(error:)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 RCamera 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty RCamera device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM28",
+    "device": "CCTV_Camera_single",
+    "type": "Major",
+    "name_zh": "CCTV_Camera_single 狀態為不活動的",
+    "name_en": "CCTV_Camera_single status is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 CCTV_Camera_single 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty CCTV_Camera_single device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM29",
+    "device": "CCTV_Camera_single",
+    "type": "Major",
+    "name_zh": "CCTV_Camera_single 狀態異常",
+    "name_en": "CCTV_Camera_single status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 CCTV_Camera_single 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty CCTV_Camera_single device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM30",
+    "device": "CCTV_Camera_single",
+    "type": "INFO",
+    "name_zh": "CCTV_Camera_single 狀態為活動的",
+    "name_en": "CCTV_Camera_single status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 CCTV_Camera_single 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty CCTV_Camera_single device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM31",
+    "device": "CCTV_Camera_overview",
+    "type": "Major",
+    "name_zh": "CCTV_Camera_overview狀態為不活動的",
+    "name_en": "CCTV_Camera_overview status is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 CCTV_Camera_overview 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty CCTV_Camera_overview device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM32",
+    "device": "CCTV_Camera_overview",
+    "type": "Major",
+    "name_zh": "CCTV_Camera_overview 狀態異常",
+    "name_en": "CCTV_Camera_overview status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 CCTV_Camera_overview 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty CCTV_Camera_overview device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XCAM33",
+    "device": "CCTV_Camera_overview",
+    "type": "INFO",
+    "name_zh": "CCTV_Camera_overview 狀態為活動的",
+    "name_en": "CCTV_Camera_overview status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 CCTV_Camera_overview 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty CCTV_Camera_overview device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XLSR01",
+    "device": "Lightsensor",
+    "type": "Major",
+    "name_zh": "LightSensor狀態為不活動的",
+    "name_en": "LightSensor status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Lightsensor 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Lightsensor device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XLSR02",
+    "device": "Lightsensor",
+    "type": "INFO",
+    "name_zh": "LightSensor狀態為不活動的(T1XH_LightSensor is abnormal)",
+    "name_en": "LightSensor status is inactive(T1XH_LightSensor is abnormal)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Lightsensor 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Lightsensor device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER01",
+    "device": "Reader",
+    "type": "Major",
+    "name_zh": "Reader狀態為不活動的",
+    "name_en": "Reader status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER02",
+    "device": "Reader",
+    "type": "Major",
+    "name_zh": "Reader 狀態異常",
+    "name_en": "Reader status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER03",
+    "device": "Reader",
+    "type": "INFO",
+    "name_zh": "Reader 狀態為活動的",
+    "name_en": "Reader status is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER04",
+    "device": "Reader",
+    "type": "INFO",
+    "name_zh": "Reader Key Version 1",
+    "name_en": "Reader Key Version 1",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER05",
+    "device": "Reader",
+    "type": "INFO",
+    "name_zh": "Reader Key Version 2",
+    "name_en": "Reader Key Version 2",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER06",
+    "device": "Reader",
+    "type": "INFO",
+    "name_zh": "Reader Key Version 3",
+    "name_en": "Reader Key Version 3",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER07",
+    "device": "Reader",
+    "type": "INFO",
+    "name_zh": "Reader Key Version 4",
+    "name_en": "Reader Key Version 4",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER08",
+    "device": "Reader",
+    "type": "INFO",
+    "name_zh": "Reader Key Version 5",
+    "name_en": "Reader Key Version 5",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER09",
+    "device": "Reader",
+    "type": "INFO",
+    "name_zh": "Reader Key Version 6",
+    "name_en": "Reader Key Version 6",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER10",
+    "device": "Reader",
+    "type": "INFO",
+    "name_zh": "Reader Key Version 7",
+    "name_en": "Reader Key Version 7",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER11",
+    "device": "Reader",
+    "type": "INFO",
+    "name_zh": "Reader Key Version 8",
+    "name_en": "Reader Key Version 8",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER12",
+    "device": "Reader",
+    "type": "INFO",
+    "name_zh": "Reader Key Version 9",
+    "name_en": "Reader Key Version 9",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER13",
+    "device": "Reader",
+    "type": "INFO",
+    "name_zh": "Reader Key Version 10",
+    "name_en": "Reader Key Version 10",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER14",
+    "device": "Reader",
+    "type": "INFO",
+    "name_zh": "Reader Key Version 11",
+    "name_en": "Reader Key Version 11",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER15",
+    "device": "Reader",
+    "type": "INFO",
+    "name_zh": "Reader Key Version 12",
+    "name_en": "Reader Key Version 12",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER16",
+    "device": "Reader",
+    "type": "INFO",
+    "name_zh": "Reader Key Version 13",
+    "name_en": "Reader Key Version 13",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER17",
+    "device": "Reader",
+    "type": "INFO",
+    "name_zh": "Reader Key Version 14",
+    "name_en": "Reader Key Version 14",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER18",
+    "device": "Reader",
+    "type": "INFO",
+    "name_zh": "Reader Key Version 15",
+    "name_en": "Reader Key Version 15",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER19",
+    "device": "Reader",
+    "type": "INFO",
+    "name_zh": "Reader Key Version 16",
+    "name_en": "Reader Key Version 16",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER20",
+    "device": "Reader",
+    "type": "INFO",
+    "name_zh": "Reader 狀態異常(Socket closed)",
+    "name_en": "Reader status is abnormal(Socket closed)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER21",
+    "device": "Reader",
+    "type": "INFO",
+    "name_zh": "Reader NTP狀態異常(ntp time offset 0 is impossible)",
+    "name_en": "Reader NTP status is abnormal(ntp time offset 0 is impossible)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER22",
+    "device": "Reader",
+    "type": "Major",
+    "name_zh": "Reader 狀態異常(device_open_failure)",
+    "name_en": "Reader status is abnormal(device_open_failure)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER23",
+    "device": "Reader",
+    "type": "Major",
+    "name_zh": "Reader 狀態異常(action=2)",
+    "name_en": "Reader status is abnormal(action=2)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER24",
+    "device": "Reader",
+    "type": "Major",
+    "name_zh": "Reader 狀態異常(action=3)",
+    "name_en": "Reader status is abnormal(action=3)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER25",
+    "device": "Reader",
+    "type": "Major",
+    "name_zh": "Reader 狀態異常(action=4)",
+    "name_en": "Reader status is abnormal(action=4)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER26",
+    "device": "Reader",
+    "type": "Major",
+    "name_zh": "Reader 狀態異常(return_loss)",
+    "name_en": "Reader status is abnormal(return_loss)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER27",
+    "device": "Reader",
+    "type": "Major",
+    "name_zh": "Reader 連線異常(50007)",
+    "name_en": "Reader connection is abnormal(50007)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER28",
+    "device": "Reader",
+    "type": "Major",
+    "name_zh": "Reader NTP狀態異常(time offset)",
+    "name_en": "Reader NTP status is abnormal(time offset)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER29",
+    "device": "Reader",
+    "type": "Major",
+    "name_zh": "Reader 狀態異常(action=0)",
+    "name_en": "Reader status is abnormal(action=0)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XRDER30",
+    "device": "Reader",
+    "type": "Major",
+    "name_zh": "Reader 狀態異常(VSWR)",
+    "name_en": "Reader status is abnormal(VSWR)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Reader 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Reader device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSICK01",
+    "device": "Sensor",
+    "type": "Major",
+    "name_zh": "SICK 狀態異常",
+    "name_en": "detector status is abnormal",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Sensor 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Sensor device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSICK02",
+    "device": "Sensor",
+    "type": "INFO",
+    "name_zh": "SICK 狀態為活動的",
+    "name_en": "detector status is active",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Sensor 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Sensor device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSICK03",
+    "device": "Sensor",
+    "type": "Major",
+    "name_zh": "SICK 狀態為不活動的",
+    "name_en": "detector status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Sensor 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Sensor device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSICK04",
+    "device": "ioLogik",
+    "type": "Major",
+    "name_zh": "IOLogik 狀態為不活動的",
+    "name_en": "io-controller status is inactive",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 ioLogik 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty ioLogik device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSICK05",
+    "device": "Sensor",
+    "type": "Major",
+    "name_zh": "SICK 狀態異常(failover)",
+    "name_en": "detector status is abnormal(failover)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Sensor 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Sensor device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSICK08",
+    "device": "Sensor",
+    "type": "Major",
+    "name_zh": "SICK 連線異常(connect timed out)",
+    "name_en": "detector connection is abnormal(connect timed out)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Sensor 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Sensor device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSICK09",
+    "device": "Sensor",
+    "type": "Major",
+    "name_zh": "SICK 連線異常(No route to host)",
+    "name_en": "detector connection is abnormal(No route to host)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Sensor 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Sensor device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSICK10",
+    "device": "ioLogik",
+    "type": "Major",
+    "name_zh": "SICK iologic 連線異常(Not receive heartbeat from iologic)",
+    "name_en": "detector io-controller connection is abnormal(Not receive heartbeat from io-controller)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 ioLogik 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty ioLogik device.",
+      "Verify connection status."
+    ]
+  },
+  {
+    "code": "T1XSICK13",
+    "device": "Sensor",
+    "type": "Major",
+    "name_zh": "SICK 狀態異常(Pollution Warning)",
+    "name_en": "detector status is abnormal(Pollution Warning)",
+    "steps_zh": [
+      "打開系統設定，選擇故障的 Sensor 設備。",
+      "確認連線狀態與物理線路。"
+    ],
+    "steps_en": [
+      "Open system setup, select the faulty Sensor device.",
+      "Verify connection status."
+    ]
+  }
+]
